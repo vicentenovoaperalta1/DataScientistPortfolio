@@ -1,57 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Brief - Your Project Title</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to your CSS for custom styling -->
-</head>
-<body>
-    <header>
-        <h1>Your Project Title</h1>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Classifier | Project Brief</title>
 
-    <section>
-        <h2>Objective</h2>
-        <p>Provide a brief explanation of the project objective here. This should be 1-2 sentences summarizing the problem you're addressing.</p>
+    <!-- Link the same stylesheet -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Include FontAwesome if icons are used -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Include any additional scripts as needed -->
+    <script defer src="./javascript/scrollreveal.min.js"></script>
+    <script defer src="./javascript/scrollveal.js"></script>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div id="hero">
+      <section class="container">
+        <h1 class="hero-title">
+          Brain Tumor Classifier <br />
+          <span class="text-color-main">Project Overview</span>
+        </h1>
+        <p class="hero-cta">
+          <a class="cta-btn cta-btn--hero" href="index.html">Back to Portfolio</a>
+        </p>
+      </section>
+    </div>
+
+    <!-- Project Description Section -->
+    <section id="project-details">
+      <div class="container">
+        <h2 class="section-title">About the Project</h2>
+        <p class="about-wrapper__info-text">
+          The Brain Tumor Classifier project focuses on leveraging deep learning
+          techniques to classify brain tumors into distinct categories based on
+          medical imaging data. The classifier was built using convolutional neural
+          networks (CNNs), achieving high accuracy while emphasizing interpretability.
+        </p>
+        <p class="about-wrapper__info-text">
+          This tool aims to aid in early diagnosis and treatment planning by providing
+          insights into tumor type and characteristics.
+        </p>
+      </div>
     </section>
 
-    <section>
-        <h2>Context and Motivation</h2>
-        <p>Describe the context or motivation behind this project. Explain why this project is relevant, interesting, or valuable in a particular field or industry.</p>
-    </section>
-
-    <section>
-        <h2>Methodology</h2>
-        <p>Summarize the main steps in your approach, such as data collection, preprocessing, model selection, and evaluation. Highlight any unique methods or techniques used.</p>
-    </section>
-
-    <section>
-        <h2>Key Findings or Results</h2>
-        <p>Present the main results or findings from your analysis. This could be performance metrics for a model, key insights from the data, or visualizations that support your conclusions.</p>
-        <!-- Optional: Add example visualization -->
-        <img src="path-to-your-image.png" alt="Example visualization" style="width:100%; max-width:600px;">
-    </section>
-
-    <section>
-        <h2>Tools and Technologies Used</h2>
-        <ul>
-            <li>Python</li>
-            <li>scikit-learn</li>
-            <li>TensorFlow</li>
-            <li>Pandas</li>
-            <li>Other tools relevant to your project</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>View the Full Code</h2>
-        <p>You can view the full code and explore the project in more detail on Google Colab:</p>
-        <a href="https://colab.research.google.com/your-colab-notebook-link" target="_blank">Open the Project on Google Colab</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Your Name</p>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#hero" class="back-to-top" aria-label="go back to top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <p class="footer__text">
+          &copy; <span id="year"></span> - Template by
+          <a
+            href="https://github.com/AnilSeervi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Anil Seervi</a
+          >. <br />Made with &hearts;
+        </p>
+      </div>
     </footer>
-</body>
+
+    <!-- JS Script for Dynamic Year -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
