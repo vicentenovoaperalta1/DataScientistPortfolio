@@ -113,10 +113,12 @@
       <div class="container">
         <h3 class="section-title-small">Preprocessing</h3>
         <ul>
-          <p>Image Resizing</p>
-          <p>Image Normalization</p>
-          <p>Handling Imbalanced Data</p>
-          <p>Data Augmentation</p>
+          <p>Image Resizing: all images are set to 224x224 pixels.</p>
+          <p>Image Normalization: scales the color data from [0, 255] to [0, 1], to stabilize and improve the training process.</p>
+          <p>Handling Imbalanced Data: in the target variable, the class "normal" has less instances than the other classes.</p>
+          <p>I addressed the problem by using a function that gives the model weights that are inversely proportional</p>
+          <p>to the frequency of each class in the training dataset. This enhances the training process.</p>
+          <p>Data Augmentation: to be continued...</p>
         </ul>
       </div>
     </section>
