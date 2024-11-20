@@ -113,29 +113,59 @@
       <div class="container">
         <h3 class="section-title-small" style="font-size: 2em;">Preprocessing</h3>
         <ul>
-          <p>Image Resizing: all images are set to 224x224 pixels.</p>
-          <p>Image Normalization: scales the color data from [0, 255] to [0, 1], to stabilize and improve the training process.</p>
-          <p>Handling Imbalanced Data: in the target variable, the class "normal" has less instances than the other classes.</p>
-          <p>I addressed the problem by using a function that gives the model weights that are inversely proportional</p>
+          <p><strong>Image Resizing:</strong> all images are set to 224x224 pixels.</p>
+          <p><strong>Image Normalization:</strong> scales the color data from [0, 255] to [0, 1], to stabilize and improve the training process.</p>
+          <p><strong>Handling Imbalanced Data:</strong> in the target variable, the class "normal" has less instances than the other classes.</p>
+          <p><strong>I addressed the problem:</strong> by using a function that gives the model weights that are inversely proportional</p>
           <p>to the frequency of each class in the training dataset. This enhances the training process.</p>
-          <p>Data Augmentation: to be continued...</p>
+          <p><strong>Data Augmentation:</strong> to be continued...</p>
         </ul>
       </div>
     </section>
 
     <!-- Model 1 Section -->
-    <section id="model-1" class="section-container">
-      <div class="container">
-        <h3 class="section-title-small" style="font-size: 2em;">Model 1</h3>
-        <p>Model 1 is a Convolutional Neural Network (CNN) that consists of:</p>
-        <ul>
-          <p>Convolutional layers for feature extraction</p>
-          <p>Max-pooling layers to reduce the dimensionality</p>
-          <p>Fully connected layers for classification</p>
-          <p>Dropout layers to prevent overfitting</p>
-        </ul>
-      </div>
-    </section>
+<section id="model-1" class="section-container">
+  <div class="container">
+    <h3 class="section-title-small" style="font-size: 2em;">Model 1</h3>
+    <p>Model 1 is a Convolutional Neural Network (CNN) that consists of:</p>
+    <ul>
+      <li>
+        <strong>Input Layer:</strong>
+        <p>
+          <strong>Purpose:</strong> Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.
+        </p>
+        <p>
+          <strong>Rationale:</strong> This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.
+        </p>
+      </li>
+      <li>
+        <strong>Convolutional Layers:</strong>
+        <p>
+          <strong>Purpose:</strong> Extracts low- to high-level features from the input images, such as edges, textures, and abstract patterns.
+        </p>
+      </li>
+      <li>
+        <strong>Max-Pooling Layers:</strong>
+        <p>
+          <strong>Purpose:</strong> Reduces spatial dimensions to decrease computational complexity while retaining essential features.
+        </p>
+      </li>
+      <li>
+        <strong>Fully Connected Layers:</strong>
+        <p>
+          <strong>Purpose:</strong> Combines extracted features and predicts the output class.
+        </p>
+      </li>
+      <li>
+        <strong>Dropout Layers:</strong>
+        <p>
+          <strong>Purpose:</strong> Prevents overfitting by randomly deactivating neurons during training.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
 
     <!-- Model 1 Results Section -->
     <section id="model-1-results" class="section-container">
