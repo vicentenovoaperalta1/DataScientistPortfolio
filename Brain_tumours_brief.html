@@ -184,22 +184,32 @@
         <div class="image-results">
           <div class="result-item">
             <img src="./assets/Model1_Accuracy.png" alt="Model 1 Accuracy" />
-            <p>This graph shows the accuracy trend of Model 1 during training and validation.</p>
+            <p>This graph shows the accuracy trend of Model 1 during training and validation. In the last epochs, the validation 
+              accuracy goes directly to the ground, strongly suggesting overfitting.
+            </p>
+            <br>
             <br>
           </div>
           <div class="result-item">
             <img src="./assets/Model1_Conf_Mat.png" alt="Model 1 Confusion Matrix" />
-            <p>This is the confusion matrix for Model 1, illustrating the performance across all classes.</p>
+            <p>The confusion matrix for Model 1 shows a very poor performance overall, since there are very few cases on the diagonal.</p>
+            <br>
             <br>
           </div>
           <div class="result-item">
             <img src="./assets/Model1_Class_Rep.png" alt="Model 1 Classification Report" />
-            <p>The classification report summarizes precision, recall, and F1-score for each class in Model 1.</p>
+            <p>The classification report confirms the bad results for Model 1. It shows a very low accuracy of 21%,
+                as well as bad f1 scores for all classes, and very low precision and recall for almost all the classes.
+            </p>
             <br>
             <br>
           </div>
         </div>
-        <p>Model 1 results indicate that the model performs well in classifying brain tumor types with reasonable accuracy.</p>
+        <p>Model 1 shows poor performance, with a sharp decline in validation accuracy in the final epochs, indicating overfitting.
+          The confusion matrix confirms this, with very few correct predictions, and the classification report highlights a low accuracy of 21%, 
+          along with poor F1 scores, precision, and recall for most classes.
+          These results suggest a need for adjustments. To combat overfitting, I will implement changes for Model 2.
+        </p>
       </div>
     </section>
 
@@ -224,14 +234,20 @@
           <div class="result-item">
             <img src="./assets/Model2_Accuracy.png" alt="Model 2 Accuracy" />
             <p>This graph shows the accuracy trend of Model 2 during training and validation.</p>
+            <br>
+            <br>
           </div>
           <div class="result-item">
             <img src="./assets/Model2_Conf_Mat.png" alt="Model 2 Confusion Matrix" />
             <p>This is the confusion matrix for Model 2, illustrating the performance across all classes.</p>
+            <br>
+            <br>
           </div>
           <div class="result-item">
             <img src="./assets/Model2_Class_Rep.png" alt="Model 2 Classification Report" />
             <p>The classification report summarizes precision, recall, and F1-score for each class in Model 2.</p>
+            <br>
+            <br>
           </div>
         </div>
         <p>Model 2 shows improved results, particularly in terms of accuracy and generalization over Model 1.</p>
