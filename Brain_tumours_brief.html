@@ -132,32 +132,44 @@
     <h3 class="section-title-small" style="font-size: 2em;">Model 1</h3>
     <p>Model 1 is a Convolutional Neural Network (CNN) that consists of:</p>
     <p><strong>Input Layer:</strong></p>
-    <p>
-      <strong>Purpose:</strong> Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.
-    </p>
-    <p>
-      <strong>Rationale:</strong> This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.
-    </p>
+    <p>Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.</p>
+    <p>This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.</p>
 
-    <p><strong>Convolutional Layers:</strong></p>
-    <p>
-      <strong>Purpose:</strong> Extracts low- to high-level features from the input images, such as edges, textures, and abstract patterns.
-    </p>
+    <p><strong>First Convolutional Layer:</strong></p>
+    <p>Applies 32 filters of size (3, 3) with the ReLU activation function.</p>
+    <p>Detects low-level features like edges and textures from the input image.</p>
+
+    <p><strong>Second Convolutional Layer:</strong></p>
+    <p>Applies 64 filters of size (3, 3) with ReLU activation.</p>
+    <p>Learns more complex patterns and intermediate-level features.</p>
+
+    <p><strong>Third Convolutional Layer:</strong></p>
+    <p>Applies 128 filters of size (3, 3) with ReLU activation.</p>
+    <p>Captures high-level abstract features relevant for classification.</p>
 
     <p><strong>Max-Pooling Layers:</strong></p>
-    <p>
-      <strong>Purpose:</strong> Reduces spatial dimensions to decrease computational complexity while retaining essential features.
-    </p>
+    <p>Follows each convolutional layer. Reduces the spatial dimensions (image size) by a factor of 2 using a pooling window.</p>
+    <p>Reduces computational complexity, controls overfitting, and retains the most significant features.</p>
 
-    <p><strong>Fully Connected Layers:</strong></p>
-    <p>
-      <strong>Purpose:</strong> Combines extracted features and predicts the output class.
-    </p>
+    <p><strong>Batch Normalization Layers:</strong></p>
+    <p>Normalizes the output of the preceding layer to ensure that the mean is 0 and the variance is 1.</p>
+    <p>Stabilizes and accelerates training by reducing internal covariate shift and improving gradient flow.</p>
 
-    <p><strong>Dropout Layers:</strong></p>
-    <p>
-      <strong>Purpose:</strong> Prevents overfitting by randomly deactivating neurons during training.
-    </p>
+    <p><strong>Flatten Layer:</strong></p>
+    <p>Flattens the 3D feature maps into a 1D vector.</p>
+    <p>Prepares the data for the fully connected (dense) layers.</p>
+
+    <p><strong>Optimizer:</strong></p>
+    <p>Adam Optimizer, which adapts learning rates during training to improve convergence.</p>
+
+    <p><strong>Loss Function:</strong></p>
+    <p>Categorical cross-entropy, suited for multi-class classification problems.</p>
+
+    <p><strong>Batch size:</strong></p>
+    <p>32, which is a small, but not that small batch size. This helps by optimizing memory, while also having stable gradient estimates</p>
+
+    <p><strong>Epochs:</strong></p>
+    <p>20 is a good number to start with in this model since it allows a good balance between underfitting and overfitting.</p>
   </div>
 </section>
 
