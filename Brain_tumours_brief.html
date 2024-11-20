@@ -20,15 +20,52 @@
     <!-- Include any additional scripts as needed -->
     <script defer src="./javascript/scrollreveal.min.js"></script>
     <script defer src="./javascript/scrollveal.js"></script>
+
+    <style>
+      /* Style for positioning the image next to the title */
+      .hero-title-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-title {
+        margin-right: 20px;
+      }
+
+      .hero-title img {
+        max-width: 150px;
+        height: auto;
+      }
+
+      /* Style for section titles */
+      .section-title-small {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      /* Style for image results */
+      .image-results img {
+        width: 100%;
+        max-width: 500px;
+        margin: 10px 0;
+      }
+
+      .section-container {
+        margin-bottom: 40px;
+      }
+    </style>
   </head>
   <body>
     <!-- Hero Section -->
     <div id="hero">
       <section class="container">
-        <h1 class="hero-title">
-          Brain Tumor Classifier <br />
-          <span class="text-color-main">Project Overview</span>
-        </h1>
+        <div class="hero-title-wrapper">
+          <h1 class="hero-title">
+            Brain Tumor Classifier <br />
+            <span class="text-color-main">Project Overview</span>
+          </h1>
+          <img src="Brain_tumours_image.png" alt="Brain Tumor Image" />
+        </div>
         <p class="hero-cta">
           <a class="cta-btn cta-btn--hero" href="index.html">Back to Portfolio</a>
         </p>
@@ -36,19 +73,111 @@
     </div>
 
     <!-- Project Description Section -->
-    <section id="project-details">
+    <section id="project-details" class="section-container">
       <div class="container">
         <h2 class="section-title">About the Project</h2>
         <p class="about-wrapper__info-text">
-          The Brain Tumor Classifier project focuses on leveraging deep learning
-          techniques to classify brain tumors into distinct categories based on
-          medical imaging data. The classifier was built using convolutional neural
-          networks (CNNs), achieving high accuracy while emphasizing interpretability.
+          This project focuses on creating a machine learning model to classify types of brain tumors from medical images,  
+          using deep learning to identify unique patterns for each tumor type.  
+          The model aims to support more accurate diagnoses, potentially improving early detection and treatment planning.
         </p>
-        <p class="about-wrapper__info-text">
-          This tool aims to aid in early diagnosis and treatment planning by providing
-          insights into tumor type and characteristics.
-        </p>
+      </div>
+    </section>
+
+    <!-- Libraries Used Section -->
+    <section id="libraries-used" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small">Libraries Used</h3>
+        <ul>
+          <li>TensorFlow</li>
+          <li>Keras</li>
+          <li>NumPy</li>
+          <li>Pandas</li>
+          <li>Matplotlib</li>
+          <li>OpenCV</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Data Source Section -->
+    <section id="data-source" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small">Data Source</h3>
+        <p>Kaggle: Brain Tumor Classification Dataset</p>
+      </div>
+    </section>
+
+    <!-- Preprocessing Section -->
+    <section id="preprocessing" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small">Preprocessing</h3>
+        <ul>
+          <li>Image Resizing</li>
+          <li>Image Normalization</li>
+          <li>Handling Imbalanced Data</li>
+          <li>Data Augmentation</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Model 1 Section -->
+    <section id="model-1" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small">Model 1</h3>
+        <p>Model 1 is a Convolutional Neural Network (CNN) that consists of:</p>
+        <ul>
+          <li>Convolutional layers for feature extraction</li>
+          <li>Max-pooling layers to reduce the dimensionality</li>
+          <li>Fully connected layers for classification</li>
+          <li>Dropout layers to prevent overfitting</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Model 1 Results Section -->
+    <section id="model-1-results" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small">Model 1 - Results</h3>
+        <div class="image-results">
+          <img src="model1_result1.png" alt="Model 1 Result 1" />
+          <img src="model1_result2.png" alt="Model 1 Result 2" />
+          <img src="model1_result3.png" alt="Model 1 Result 3" />
+        </div>
+        <p>Model 1 results indicate that the model performs well in classifying brain tumor types with reasonable accuracy.</p>
+      </div>
+    </section>
+
+    <!-- Model 2 Section -->
+    <section id="model-2" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small">Model 2</h3>
+        <p>Model 2 is an advanced CNN with the following improvements:</p>
+        <ul>
+          <li>Additional convolutional layers</li>
+          <li>Batch normalization for faster training</li>
+          <li>Global average pooling to reduce overfitting</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Model 2 Results Section -->
+    <section id="model-2-results" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small">Model 2 - Results</h3>
+        <div class="image-results">
+          <img src="model2_result1.png" alt="Model 2 Result 1" />
+          <img src="model2_result2.png" alt="Model 2 Result 2" />
+          <img src="model2_result3.png" alt="Model 2 Result 3" />
+        </div>
+        <p>Model 2 shows improved results, particularly in terms of accuracy and generalization over Model 1.</p>
+      </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion" class="section-container">
+      <div class="container">
+        <h2 class="section-title">Conclusion</h2>
+        <p>The project successfully demonstrates the potential of deep learning for brain tumor classification. Both models showed promise, with Model 2 achieving better accuracy and robustness compared to Model 1. This approach holds significant potential for early diagnosis and personalized treatment planning for brain tumor patients.</p>
       </div>
     </section>
 
@@ -59,13 +188,7 @@
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
         <p class="footer__text">
-          &copy; <span id="year"></span> - Template by
-          <a
-            href="https://github.com/AnilSeervi"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Anil Seervi</a
-          >. <br />Made with &hearts;
+          &copy; <span id="year"></span> - Vicente Novoa
         </p>
       </div>
     </footer>
