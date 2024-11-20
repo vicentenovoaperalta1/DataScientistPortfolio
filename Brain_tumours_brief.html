@@ -89,12 +89,12 @@
       <div class="container">
         <h3 class="section-title-small" style="font-size: 2em;">Libraries Used</h3>
         <ul>
-          Pandas
-          TensorFlow
-          Scikit-Learn
-          Matplotlib
-          Pillow
-          Keras
+          <p>Pandas</p>
+          <p>TensorFlow</p>
+          <p>Scikit-Learn</p>
+          <p>Matplotlib</p>
+          <p>Pillow</p>
+          <p>Keras</p>
         </ul>
       </div>
     </section>
@@ -128,44 +128,35 @@
   <div class="container">
     <h3 class="section-title-small" style="font-size: 2em;">Model 1</h3>
     <p>Model 1 is a Convolutional Neural Network (CNN) that consists of:</p>
-    <ul>
-      <li>
-        <strong>Input Layer:</strong>
-        <p>
-          <strong>Purpose:</strong> Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.
-        </p>
-        <p>
-          <strong>Rationale:</strong> This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.
-        </p>
-      </li>
-      <li>
-        <strong>Convolutional Layers:</strong>
-        <p>
-          <strong>Purpose:</strong> Extracts low- to high-level features from the input images, such as edges, textures, and abstract patterns.
-        </p>
-      </li>
-      <li>
-        <strong>Max-Pooling Layers:</strong>
-        <p>
-          <strong>Purpose:</strong> Reduces spatial dimensions to decrease computational complexity while retaining essential features.
-        </p>
-      </li>
-      <li>
-        <strong>Fully Connected Layers:</strong>
-        <p>
-          <strong>Purpose:</strong> Combines extracted features and predicts the output class.
-        </p>
-      </li>
-      <li>
-        <strong>Dropout Layers:</strong>
-        <p>
-          <strong>Purpose:</strong> Prevents overfitting by randomly deactivating neurons during training.
-        </p>
-      </li>
-    </ul>
+    <p><strong>Input Layer:</strong></p>
+    <p>
+      <strong>Purpose:</strong> Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.
+    </p>
+    <p>
+      <strong>Rationale:</strong> This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.
+    </p>
+
+    <p><strong>Convolutional Layers:</strong></p>
+    <p>
+      <strong>Purpose:</strong> Extracts low- to high-level features from the input images, such as edges, textures, and abstract patterns.
+    </p>
+
+    <p><strong>Max-Pooling Layers:</strong></p>
+    <p>
+      <strong>Purpose:</strong> Reduces spatial dimensions to decrease computational complexity while retaining essential features.
+    </p>
+
+    <p><strong>Fully Connected Layers:</strong></p>
+    <p>
+      <strong>Purpose:</strong> Combines extracted features and predicts the output class.
+    </p>
+
+    <p><strong>Dropout Layers:</strong></p>
+    <p>
+      <strong>Purpose:</strong> Prevents overfitting by randomly deactivating neurons during training.
+    </p>
   </div>
 </section>
-
 
     <!-- Model 1 Results Section -->
     <section id="model-1-results" class="section-container">
@@ -175,14 +166,17 @@
           <div class="result-item">
             <img src="./assets/Model1_Accuracy.png" alt="Model 1 Accuracy" />
             <p>This graph shows the accuracy trend of Model 1 during training and validation.</p>
+            <p></p>
           </div>
           <div class="result-item">
             <img src="./assets/Model1_Conf_Mat.png" alt="Model 1 Confusion Matrix" />
             <p>This is the confusion matrix for Model 1, illustrating the performance across all classes.</p>
+            <p></p>
           </div>
           <div class="result-item">
             <img src="./assets/Model1_Class_Rep.png" alt="Model 1 Classification Report" />
             <p>The classification report summarizes precision, recall, and F1-score for each class in Model 1.</p>
+            <p></p>
           </div>
         </div>
         <p>Model 1 results indicate that the model performs well in classifying brain tumor types with reasonable accuracy.</p>
