@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Classifier | Project Brief</title>
+
+    <!-- Link the same stylesheet -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
+    <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
+
+    <!-- Include FontAwesome if icons are used -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Include any additional scripts as needed -->
+    <script defer src="./javascript/scrollreveal.min.js"></script>
+    <script defer src="./javascript/scrollveal.js"></script>
+
+    <style>
+      /* Style for positioning the image next to the title */
+      .hero-title-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-title {
+        margin-right: 20px;
+      }
+
+      .hero-title img {
+        max-width: 150px;
+        height: auto;
+      }
+
+      /* Style for section titles */
+      .section-title-small {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      /* Style for image results */
+      .image-results img {
+        width: 100%;
+        max-width: 500px;
+        margin: 10px 0;
+      }
+
+      .section-container {
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div id="hero">
+      <section class="container">
+        <div class="hero-title-wrapper">
+          <h1 class="hero-title">
+            Brain Tumor Classifier <br />
+            <span class="text-color-main">Project Overview</span>
+          </h1>
+          <img src="./assets/Brains_image.png" alt="Brain Tumor Image" width="400" height="400" style="margin-left: 100px;"/>
+        </div>
+        <p class="hero-cta">
+          <a class="cta-btn cta-btn--hero" href="index.html">Back to Portfolio</a>
+        </p>
+      </section>
+    </div>
+
+    <!-- Project Description Section -->
+    <section id="project-details" class="section-container">
+      <div class="container">
+        <h2 class="section-title">About the Project</h2>
+        <p class="about-wrapper__info-text">
+          This project focuses on creating a machine learning model to classify types of brain tumors from medical images,  
+          using deep learning to identify unique patterns for each tumor type.  
+          The model aims to support more accurate diagnoses, potentially improving early detection and treatment planning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Libraries Used Section -->
+    <section id="libraries-used" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Libraries Used</h3>
+        <ul>
+          <p>Pandas</p>
+          <p>TensorFlow</p>
+          <p>Scikit-Learn</p>
+          <p>Matplotlib</p>
+          <p>Pillow</p>
+          <p>Keras</p>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Data Source Section -->
+    <section id="data-source" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Data Source</h3>
+        <p>Kaggle: Brain Tumor Classification Dataset</p>
+        <p>link: https://www.kaggle.com/datasets/thomasdubail/brain-tumors-256x256</p>
+      </div>
+    </section>
+
+    <!-- Preprocessing Section -->
+    <section id="preprocessing" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Preprocessing</h3>
+        <ul>
+          <p><strong>Image Resizing:</strong> all images are set to 224x224 pixels.</p>
+          <br>
+          <p><strong>Image Normalization:</strong> scales the color data from [0, 255] to [0, 1], to stabilize and improve the training process.</p>
+          <br>
+          <p><strong>Handling Imbalanced Data:</strong> in the target variable, the class "normal" has less instances than the other classes.</p>
+          <p>I addressed the problem by using a function that gives the model weights that are inversely proportional</p>
+          <p>to the frequency of each class in the training dataset. This enhances the training process.</p>
+          <br>
+          <p><strong>Data Augmentation:</strong> to be continued...</p>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Model 1 Section -->
+<section id="model-1" class="section-container">
+  <div class="container">
+    <h3 class="section-title-small" style="font-size: 2em;">Model 1</h3>
+    <p>Model 1 is a Convolutional Neural Network (CNN) that consists of:</p>
+    <br>
+    <p><strong>Input Layer:</strong></p>
+    <p>Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.</p>
+    <p>This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.</p>
+    <br>
+    <p><strong>First Convolutional Layer:</strong></p>
+    <p>Applies 32 filters of size (3, 3) with the ReLU activation function.</p>
+    <p>Detects low-level features like edges and textures from the input image.</p>
+    <br>
+    <p><strong>Second Convolutional Layer:</strong></p>
+    <p>Applies 64 filters of size (3, 3) with ReLU activation.</p>
+    <p>Learns more complex patterns and intermediate-level features.</p>
+    <br>
+    <p><strong>Third Convolutional Layer:</strong></p>
+    <p>Applies 128 filters of size (3, 3) with ReLU activation.</p>
+    <p>Captures high-level abstract features relevant for classification.</p>
+    <br>
+    <p><strong>Max-Pooling Layers:</strong></p>
+    <p>Follows each convolutional layer. Reduces the spatial dimensions (image size) by a factor of 2 using a pooling window.</p>
+    <p>Reduces computational complexity, controls overfitting, and retains the most significant features.</p>
+    <br>
+    <p><strong>Batch Normalization Layers:</strong></p>
+    <p>Normalizes the output of the preceding layer to ensure that the mean is 0 and the variance is 1.</p>
+    <p>Stabilizes and accelerates training by reducing internal covariate shift and improving gradient flow.</p>
+    <br>
+    <p><strong>Flatten Layer:</strong></p>
+    <p>Flattens the 3D feature maps into a 1D vector.</p>
+    <p>Prepares the data for the fully connected (dense) layers.</p>
+    <br>
+    <p><strong>Optimizer:</strong></p>
+    <p>Adam Optimizer, which adapts learning rates during training to improve convergence.</p>
+    <br>
+    <p><strong>Loss Function:</strong></p>
+    <p>Categorical cross-entropy, suited for multi-class classification problems.</p>
+    <br>
+    <p><strong>Batch size:</strong></p>
+    <p>32, which is a small, but not that small batch size. This helps by optimizing memory, while also having stable gradient estimates</p>
+    <br>
+    <p><strong>Epochs:</strong></p>
+    <p>20 is a good number to start with in this model since it allows a good balance between underfitting and overfitting.</p>
+  </div>
+</section>
+
+    <!-- Model 1 Results Section -->
+    <section id="model-1-results" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Model 1 - Results</h3>
+        <div class="image-results">
+          <div class="result-item">
+            <img src="./assets/Model1_Accuracy.png" alt="Model 1 Accuracy" />
+            <p>This graph shows the accuracy trend of Model 1 during training and validation. In the last epochs, the validation 
+              accuracy goes directly to the ground, strongly suggesting overfitting.
+            </p>
+            <br>
+            <br>
+          </div>
+          <div class="result-item">
+            <img src="./assets/Model1_Conf_Mat.png" alt="Model 1 Confusion Matrix" />
+            <p>The confusion matrix for Model 1 shows a very poor performance overall, since there are very few cases on the diagonal.</p>
+            <br>
+            <br>
+          </div>
+          <div class="result-item">
+            <img src="./assets/Model1_Class_Rep.png" alt="Model 1 Classification Report" />
+            <p>The classification report confirms the bad results for Model 1. It shows a very low accuracy of 21%,
+                as well as bad f1 scores for all classes, and very low precision and recall for almost all the classes.
+            </p>
+            <br>
+            <br>
+          </div>
+        </div>
+        <p><strong>Model 1 Results:</strong>Model 1 shows poor performance, with a sharp decline in validation accuracy in the final epochs, indicating overfitting.
+          The confusion matrix confirms this, with very few correct predictions, and the classification report highlights a low accuracy of 21%, 
+          along with poor F1 scores, precision, and recall for most classes.
+          These results suggest a need for adjustments. To combat overfitting, I will implement changes for Model 2.
+        </p>
+      </div>
+    </section>
+
+    <!-- Model 2 Section -->
+    <section id="model-2" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Model 2</h3>
+        <p>Model 2 is an advanced CNN with the following improvements:</p>
+        <ul>
+          <p>Additional convolutional layers</p>
+          <p>Batch normalization for faster training</p>
+          <p>Global average pooling to reduce overfitting</p>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Model 2 Results Section -->
+    <section id="model-2-results" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Model 2 - Results</h3>
+        <div class="image-results">
+          <div class="result-item">
+            <img src="./assets/Model2_Accuracy.png" alt="Model 2 Accuracy" />
+            <p>This graph shows the accuracy trend of Model 2 during training and validation.</p>
+            <br>
+            <br>
+          </div>
+          <div class="result-item">
+            <img src="./assets/Model2_Conf_Mat.png" alt="Model 2 Confusion Matrix" />
+            <p>This is the confusion matrix for Model 2, illustrating the performance across all classes.</p>
+            <br>
+            <br>
+          </div>
+          <div class="result-item">
+            <img src="./assets/Model2_Class_Rep.png" alt="Model 2 Classification Report" />
+            <p>The classification report summarizes precision, recall, and F1-score for each class in Model 2.</p>
+            <br>
+            <br>
+          </div>
+        </div>
+        <p>Model 2 shows improved results, particularly in terms of accuracy and generalization over Model 1.</p>
+      </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion" class="section-container">
+      <div class="container">
+        <h2 class="section-title">Conclusion</h2>
+        <p>The project successfully demonstrates the potential of deep learning for brain tumor classification. Both models showed promise, with Model 2 achieving better accuracy and robustness compared to Model 1. This approach holds significant potential for early diagnosis and personalized treatment planning for brain tumor patients.</p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#hero" class="back-to-top" aria-label="go back to top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <p class="footer__text">
+          &copy; <span id="year"></span> - Vicente Novoa
+        </p>
+      </div>
+    </footer>
+
+    <!-- JS Script for Dynamic Year -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
