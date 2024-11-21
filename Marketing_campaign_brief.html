@@ -115,22 +115,53 @@
     </section>
 
     <!-- Exploratory Data Analysis Section -->
-    <section id="Exploratory Data Analysis" class="section-container">
-      <div class="container">
-        <h3 class="section-title-small" style="font-size: 2em;">Exploratory Data Analysis</h3>
-        <ul>
-          <p><strong>Image Resizing:</strong> all images are set to 224x224 pixels.</p>
-          <br>
-          <p><strong>Image Normalization:</strong> scales the color data from [0, 255] to [0, 1], to stabilize and improve the training process.</p>
-          <br>
-          <p><strong>Handling Imbalanced Data:</strong> in the target variable, the class "normal" has less instances than the other classes.</p>
-          <p>I addressed the problem by using a function that gives the model weights that are inversely proportional</p>
-          <p>to the frequency of each class in the training dataset. This enhances the training process.</p>
-          <br>
-          <p><strong>Data Augmentation:</strong> to be continued...</p>
-        </ul>
-      </div>
-    </section>
+<section id="exploratory-data-analysis" class="section-container">
+  <div class="container">
+    <h3 class="section-title-small" style="font-size: 2em;">Exploratory Data Analysis</h3>
+    
+    <!-- First Image and Description -->
+    <figure class="eda-figure">
+      <img src="./assets/.png" alt="Image Resizing Example" style="width: 100%; max-width: 600px;">
+      <figcaption>
+        <strong>Image Resizing:</strong> All images are resized to 224x224 pixels.
+      </figcaption>
+    </figure>
+    
+    <!-- Second Image and Description -->
+    <figure class="eda-figure">
+      <img src="image2.png" alt="Image Normalization Example" style="width: 100%; max-width: 600px;">
+      <figcaption>
+        <strong>Image Normalization:</strong> Scales color data from [0, 255] to [0, 1], stabilizing and improving the training process.
+      </figcaption>
+    </figure>
+    
+    <!-- Third Image and Description -->
+    <figure class="eda-figure">
+      <img src="image3.png" alt="Handling Imbalanced Data Example" style="width: 100%; max-width: 600px;">
+      <figcaption>
+        <strong>Handling Imbalanced Data:</strong> The class "normal" has fewer instances. Using class weighting helps enhance the training process.
+      </figcaption>
+    </figure>
+    
+    <!-- Fourth Image and Description -->
+    <figure class="eda-figure">
+      <img src="image4.png" alt="Class Weights Example" style="width: 100%; max-width: 600px;">
+      <figcaption>
+        <strong>Class Weights:</strong> Weights are assigned inversely proportional to class frequency, improving model balance.
+      </figcaption>
+    </figure>
+    
+    <!-- Fifth Image and Description -->
+    <figure class="eda-figure">
+      <img src="image5.png" alt="Data Augmentation Example" style="width: 100%; max-width: 600px;">
+      <figcaption>
+        <strong>Data Augmentation:</strong> Additional transformations like rotation and flipping enhance the model's robustness.
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
 
     <!-- Model 1 Section -->
 <section id="model-1" class="section-container">
