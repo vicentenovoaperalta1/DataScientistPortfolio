@@ -133,6 +133,7 @@
 <section id="model-1" class="section-container">
   <div class="container">
     <h3 class="section-title-small" style="font-size: 2em;">Model 1</h3>
+    <img src="Model1_structure.png" alt="Model 1 Structure" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
     <p>Model 1 is a Convolutional Neural Network (CNN) that consists of:</p>
     <br>
     <p><strong>Input Layer:</strong></p>
@@ -176,6 +177,7 @@
     <p>20 is a good number to start with in this model since it allows a good balance between underfitting and overfitting.</p>
   </div>
 </section>
+
 
     <!-- Model 1 Results Section -->
     <section id="model-1-results" class="section-container">
@@ -226,33 +228,55 @@
       </div>
     </section>
 
-    <!-- Model 2 Results Section -->
-    <section id="model-2-results" class="section-container">
-      <div class="container">
-        <h3 class="section-title-small" style="font-size: 2em;">Model 2 - Results</h3>
-        <div class="image-results">
-          <div class="result-item">
-            <img src="./assets/Model2_Accuracy.png" alt="Model 2 Accuracy" />
-            <p>This graph shows the accuracy trend of Model 2 during training and validation.</p>
-            <br>
-            <br>
-          </div>
-          <div class="result-item">
-            <img src="./assets/Model2_Conf_Mat.png" alt="Model 2 Confusion Matrix" />
-            <p>This is the confusion matrix for Model 2, illustrating the performance across all classes.</p>
-            <br>
-            <br>
-          </div>
-          <div class="result-item">
-            <img src="./assets/Model2_Class_Rep.png" alt="Model 2 Classification Report" />
-            <p>The classification report summarizes precision, recall, and F1-score for each class in Model 2.</p>
-            <br>
-            <br>
-          </div>
-        </div>
-        <p>Model 2 shows improved results, particularly in terms of accuracy and generalization over Model 1.</p>
-      </div>
-    </section>
+    <!-- Model 2 Section -->
+<section id="model-2" class="section-container">
+  <div class="container">
+    <h3 class="section-title-small" style="font-size: 2em;">Model 2</h3>
+    <img src="Model2_structure.png" alt="Model 2 Structure" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+    <p>Model 2 is a Convolutional Neural Network (CNN) that consists of:</p>
+    <br>
+    <p><strong>Input Layer:</strong></p>
+    <p>Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.</p>
+    <p>This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.</p>
+    <br>
+    <p><strong>First Convolutional Layer:</strong></p>
+    <p>Applies 32 filters of size (3, 3) with the ReLU activation function.</p>
+    <p>Detects low-level features like edges and textures from the input image.</p>
+    <br>
+    <p><strong>Second Convolutional Layer:</strong></p>
+    <p>Applies 64 filters of size (3, 3) with ReLU activation.</p>
+    <p>Learns more complex patterns and intermediate-level features.</p>
+    <br>
+    <p><strong>Third Convolutional Layer:</strong></p>
+    <p>Applies 128 filters of size (3, 3) with ReLU activation.</p>
+    <p>Captures high-level abstract features relevant for classification.</p>
+    <br>
+    <p><strong>Max-Pooling Layers:</strong></p>
+    <p>Follows each convolutional layer. Reduces the spatial dimensions (image size) by a factor of 2 using a pooling window.</p>
+    <p>Reduces computational complexity, controls overfitting, and retains the most significant features.</p>
+    <br>
+    <p><strong>Batch Normalization Layers:</strong></p>
+    <p>Normalizes the output of the preceding layer to ensure that the mean is 0 and the variance is 1.</p>
+    <p>Stabilizes and accelerates training by reducing internal covariate shift and improving gradient flow.</p>
+    <br>
+    <p><strong>Flatten Layer:</strong></p>
+    <p>Flattens the 3D feature maps into a 1D vector.</p>
+    <p>Prepares the data for the fully connected (dense) layers.</p>
+    <br>
+    <p><strong>Optimizer:</strong></p>
+    <p>Adam Optimizer, which adapts learning rates during training to improve convergence.</p>
+    <br>
+    <p><strong>Loss Function:</strong></p>
+    <p>Categorical cross-entropy, suited for multi-class classification problems.</p>
+    <br>
+    <p><strong>Batch size:</strong></p>
+    <p>32, which is a small, but not that small batch size. This helps by optimizing memory, while also having stable gradient estimates</p>
+    <br>
+    <p><strong>Epochs:</strong></p>
+    <p>20 is a good number to start with in this model since it allows a good balance between underfitting and overfitting.</p>
+  </div>
+</section>
+
 
     <!-- Conclusion Section -->
     <section id="conclusion" class="section-container">
