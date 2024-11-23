@@ -67,7 +67,7 @@
             Marketing Campaign - Car Company <br />
             <span class="text-color-main">Project Overview</span>
           </h1>
-          <img src="./assets/Marketing_campaign.png" alt="Marketing campaign Image" width="400" height="400" style="margin-left: 100px;"/>
+          <img src="./assets/Project2/Marketing_campaign.png" alt="Marketing campaign Image" width="400" height="400" style="margin-left: 100px;"/>
         </div>
         <p class="hero-cta">
           <a class="cta-btn cta-btn--hero" href="index.html">Back to Portfolio</a>
@@ -123,8 +123,9 @@
     <section>
       <div class="eda-figure">
         <!-- First Image -->
+    <h3 class="section-title-small" style="font-size: 1.5em;">Target Variable</h3>
         <figure>
-          <img src="./assets/Rate_Total.png" alt="Total Rate Image" style="width: 80%; max-width: 400px;">
+          <img src="./assets/Project2/Rate_Total.png" alt="Total Rate Image" style="width: 80%; max-width: 400px;">
         </figure>
     
         <p><strong>Target Variable Distribution:</strong> There were a total of 131,337 clients contacted during the last campaign. The campaign achieved a 2.7% conversion rate. It is highly imbalanced, something that I will address later.</p>
@@ -132,11 +133,11 @@
     </section>    
     
     <section>
-      <h2 class="section-title" style="font-size: 2em;">Distributions</h2>
+      <h3 class="section-title-small" style="font-size: 1.5em;">Distributions</h3>
       <div class="eda-figure">
         <!-- Second Image -->
         <figure>
-          <img src="./assets/Distributions.png" alt="Distributions Image" style="width: 100%; max-width: 600px;">
+          <img src="./assets/Project2/Distributions.png" alt="Distributions Image" style="width: 100%; max-width: 600px;">
         </figure>
     
         <p><strong>Gender:</strong> We don't know the gender of 50% of the database. 27% are male and 20% female.</p>
@@ -147,11 +148,11 @@
     </section>        
 
     <section>
-      <h2 class="section-title" style="font-size: 2em;">Rates Per Variable</h2>
+      <h3 class="section-title-small" style="font-size: 1.5em;">Rates Per Variable</h3>
       <div class="eda-figure">
         <!-- Third Image -->
         <figure>
-          <img src="./assets/Rates_Per_Variable.png" alt="Rates Per Variable Image" style="width: 100%; max-width: 600px;">
+          <img src="./assets/Project2/Rates_Per_Variable.png" alt="Rates Per Variable Image" style="width: 100%; max-width: 600px;">
         </figure>
         
         <p><strong>Gender:</strong> Gender unknown has the highest conversion rate of 3.1%, followed by male with a 2.7% rate, doubling the female rate of 1.5%.</p>
@@ -164,15 +165,60 @@
     </section>    
 
     <section>
-      <h2 class="section-title" style="font-size: 2em;">Correlation Heatmap</h2>
+      <h3 class="section-title-small" style="font-size: 1.5em;">Correlation Heatmap</h3>
       <div class="eda-figure">
         <!-- Fourth Image -->
         <figure>
-          <img src="./assets/Correlation_Heatmap.png" alt="Correlation Heatmap Image" style="width: 100%; max-width: 600px;">
+          <img src="./assets/Project2/Correlation_Heatmap.png" alt="Correlation Heatmap Image" style="width: 100%; max-width: 600px;">
         </figure>
         
-        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. It shows that many of the 
-          independent variables have high correlations between them, so it is probably better not to include all of them in the ML model.
+        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. Many of the independent 
+          variables have high correlations between them, so it's probably better not to include all of them in the ML model.
+           Also, it shows that all the variables are negatively correlated to the target variable.</p>
+        
+      </div>
+    </section>    
+
+    <section>
+      <h3 class="section-title-small" style="font-size: 2em;">Model: Catboost</h3>
+      <div class="eda-figure">
+        <!-- Fifth Image -->
+        <p>This model is very efficient at handling categorical variables. It works by building symmetric trees and doing ordered
+          boosting to help avoid overfitting. It performs well with noisy data and small datasets.
+        </p>
+        <br>
+        <br>
+        
+        <h3 class="section-title-small" style="font-size: 1.5em;">ROC Curve</h3>
+        <figure>
+          <img src="./assets/Project2/ROC_Curve.png" alt="ROC Curve Image" style="width: 100%; max-width: 600px;">
+        </figure>
+        
+        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. Many of the independent 
+          variables have high correlations between them, so it's probably better not to include all of them in the ML model.
+           Also, it shows that all the variables are negatively correlated to the target variable.</p>
+        <br>
+        <br>
+        
+        <h3 class="section-title-small" style="font-size: 1.5em;">ROC Curve</h3>
+        <figure>
+          <img src="./assets/Project2/ROC_Curve.png" alt="ROC Curve Image" style="width: 100%; max-width: 600px;">
+        </figure>
+        
+        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. Many of the independent 
+          variables have high correlations between them, so it's probably better not to include all of them in the ML model.
+           Also, it shows that all the variables are negatively correlated to the target variable.</p>
+           
+        <br>
+        <br>
+        
+        <h3 class="section-title-small" style="font-size: 1.5em;">Confusion_Matrix</h3>
+        <figure>
+          <img src="./assets/Project2/.png" alt="ROC Curve Image" style="width: 100%; max-width: 600px;">
+        </figure>
+        
+        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. Many of the independent 
+          variables have high correlations between them, so it's probably better not to include all of them in the ML model.
            Also, it shows that all the variables are negatively correlated to the target variable.</p>
         
       </div>
