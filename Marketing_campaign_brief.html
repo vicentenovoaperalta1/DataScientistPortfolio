@@ -156,8 +156,25 @@
         
         <p><strong>Gender:</strong> Gender unknown has the highest conversion rate of 3.1%, followed by male with a 2.7% rate, doubling the female rate of 1.5%.</p>
         <p>This highly indicates that gender is going to be a key variable for the campaign.</p>
-        <p><strong>Car model:</strong> Models 2, 5, 3, 1, and 4 are the most prevalent, collectively comprising 80% of the sample.</p>
-        <p><strong>Car segment:</strong> Car segments Small/Medium and Large/SUV each represent 40% of the data, while LCV is 20%.</p>
+        <p><strong>Age:</strong> The Unknown group has the highest conversion rate, and it represents the 85% of the data.
+                                Out of the rest, the best conversion rates seem to be around [35, 64].</p>
+        <p><strong>Car segment:</strong> Car segments Small/Medium and Large/SUV have a 3.0% conversion rate, nearly twice
+                                        that of the other two categories.</p>
+      </div>
+    </section>    
+
+    <section>
+      <h2 class="section-title" style="font-size: 2em;">Correlation Heatmap</h2>
+      <div class="eda-figure">
+        <!-- Fourth Image -->
+        <figure>
+          <img src="./assets/Correlation_Heatmap.png" alt="Correlation Heatmap Image" style="width: 100%; max-width: 600px;">
+        </figure>
+        
+        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. It shows that many of the 
+          independent variables have high correlations between them, so it is probably better not to include all of them in the ML model.
+           Also, it shows that all the variables are negatively correlated to the target variable.</p>
+        
       </div>
     </section>    
 
