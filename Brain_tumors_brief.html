@@ -124,7 +124,9 @@
           <p>I addressed the problem by using a function that gives the model weights that are inversely proportional</p>
           <p>to the frequency of each class in the training dataset. This enhances the training process.</p>
           <br>
-          <p><strong>Data Augmentation:</strong> to be continued...</p>
+          <p><strong>Data Augmentation:</strong> This data augmentation applies minimal changes to the images, maintaining their core features 
+            while improving model robustness. It includes slight rotations (1°), small shifts (0.5%), minor shears and zooms (1%), and horizontal flips.
+             These subtle adjustments help prevent overfitting by introducing slight variations, while the nearest fill mode preserves visual consistency.</p>
         </ul>
       </div>
     </section>
@@ -201,8 +203,8 @@
           </div>
           <div class="result-item">
             <img src="./assets/Project1/Model1_Class_Rep.png" alt="Model 1 Classification Report" />
-            <p>The classification report confirms the bad results for Model 1. It shows a very low accuracy of 21%,
-                as well as bad f1 scores for all classes, and very low precision and recall for almost all the classes.
+            <p>The classification report highlights the poor performance of Model 1, revealing a low accuracy of just 21%.
+              Additionally, it shows poor F1 scores across all classes, with low precision and recall for nearly every class.
             </p>
             <br>
             <br>
@@ -220,11 +222,12 @@
     <section id="model-2" class="section-container">
       <div class="container">
         <h3 class="section-title-small" style="font-size: 2em;">Model 2</h3>
-        <p>Model 2 is an advanced CNN with the following improvements:</p>
+        <p>Model 2 is an advanced CNN which mantains the good features of Model 1 and introduces the following improvements:</p>
         <ul>
-          <p>Additional convolutional layers</p>
-          <p>Batch normalization for faster training</p>
-          <p>Global average pooling to reduce overfitting</p>
+          <p><strong>Increased Neurons:</strong>The model now uses 64 and 128 filters instead of the previous 32, improving its ability to capture more complex patterns and features in the data.</p>
+          <p><strong>L2 Regularization:</strong>Added L2 regularization helps prevent overfitting by penalizing large weights, which promotes generalization on unseen data.</p>
+          <p><strong>Learning Rate Scheduler:</strong>The inclusion of ReduceLROnPlateau reduces the learning rate dynamically if the validation loss plateaus, ensuring more stable and fine-tuned learning, especially in later epochs.</p>
+          <p><strong>Improved Model Architecture:</strong>The revised structure uses more powerful convolutional layers with enhanced capacity, which allows for better feature extraction and classification performance.</p>
         </ul>
       </div>
     </section>
@@ -234,57 +237,48 @@
   <div class="container">
     <h3 class="section-title-small" style="font-size: 2em;">Model 2</h3>
     <img src="./assets/Project1/Model2_Structure.png" alt="Model 2 Structure" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-    <br>
-    <p>Model 2 is a Convolutional Neural Network (CNN) that consists of:</p>
-    <br>
-    <p><strong>Input Layer:</strong></p>
-    <p>Accepts the input image data of size (224, 224, 3), where 224x224 is the image resolution, and 3 represents the RGB color channels.</p>
-    <p>This size ensures a consistent input shape and reduces computational complexity compared to processing raw high-resolution images.</p>
-    <br>
-    <p><strong>First Convolutional Layer:</strong></p>
-    <p>Applies 32 filters of size (3, 3) with the ReLU activation function.</p>
-    <p>Detects low-level features like edges and textures from the input image.</p>
-    <br>
-    <p><strong>Second Convolutional Layer:</strong></p>
-    <p>Applies 64 filters of size (3, 3) with ReLU activation.</p>
-    <p>Learns more complex patterns and intermediate-level features.</p>
-    <br>
-    <p><strong>Third Convolutional Layer:</strong></p>
-    <p>Applies 128 filters of size (3, 3) with ReLU activation.</p>
-    <p>Captures high-level abstract features relevant for classification.</p>
-    <br>
-    <p><strong>Max-Pooling Layers:</strong></p>
-    <p>Follows each convolutional layer. Reduces the spatial dimensions (image size) by a factor of 2 using a pooling window.</p>
-    <p>Reduces computational complexity, controls overfitting, and retains the most significant features.</p>
-    <br>
-    <p><strong>Batch Normalization Layers:</strong></p>
-    <p>Normalizes the output of the preceding layer to ensure that the mean is 0 and the variance is 1.</p>
-    <p>Stabilizes and accelerates training by reducing internal covariate shift and improving gradient flow.</p>
-    <br>
-    <p><strong>Flatten Layer:</strong></p>
-    <p>Flattens the 3D feature maps into a 1D vector.</p>
-    <p>Prepares the data for the fully connected (dense) layers.</p>
-    <br>
-    <p><strong>Optimizer:</strong></p>
-    <p>Adam Optimizer, which adapts learning rates during training to improve convergence.</p>
-    <br>
-    <p><strong>Loss Function:</strong></p>
-    <p>Categorical cross-entropy, suited for multi-class classification problems.</p>
-    <br>
-    <p><strong>Batch size:</strong></p>
-    <p>32, which is a small, but not that small batch size. This helps by optimizing memory, while also having stable gradient estimates</p>
-    <br>
-    <p><strong>Epochs:</strong></p>
-    <p>20 is a good number to start with in this model since it allows a good balance between underfitting and overfitting.</p>
   </div>
 </section>
+
+    <!-- Model 2 Results Section -->
+    <section id="model-2-results" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Model 2 - Results</h3>
+        <div class="image-results">
+          <div class="result-item">
+            <img src="./assets/Project1/Model2_Accuracy.png" alt="Model 2 Accuracy" />
+            <p>This graph shows the accuracy trend of Model 2 during training and validation. The validation accuracy goes up steadily
+              and consistently along the second half of the graph.
+            </p>
+            <br>
+            <br>
+          </div>
+          <div class="result-item">
+            <img src="./assets/Project1/Model2_Conf_Mat.png" alt="Model 2 Confusion Matrix" />
+            <p>The confusion matrix for Model 2 shows very good results, with most instances on the diagonal.</p>
+            <br>
+            <br>
+          </div>
+          <div class="result-item">
+            <img src="./assets/Project1/Model2_Class_Rep.png" alt="Model 2 Classification Report" />
+            <p>The classification report highlights shows a very good performance of Model 2, with an improved accuracy of 70%.
+              Most of the classes have good F1-scores. The only class that really needs improving is "meningioma_tumor", which has a recall of just 30%.
+            </p>
+            <br>
+            <br>
+          </div>
+        </div>
+        <p><strong>Model 2 Results:</strong> 
+        </p>
+      </div>
+    </section>
 
 
     <!-- Conclusion Section -->
     <section id="conclusion" class="section-container">
       <div class="container">
         <h2 class="section-title">Conclusion</h2>
-        <p>The project successfully demonstrates the potential of deep learning for brain tumor classification. Both models showed promise, with Model 2 achieving better accuracy and robustness compared to Model 1. This approach holds significant potential for early diagnosis and personalized treatment planning for brain tumor patients.</p>
+        <p></p>
       </div>
     </section>
 
