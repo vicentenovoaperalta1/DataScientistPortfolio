@@ -125,7 +125,7 @@
           <p>to the frequency of each class in the training dataset. This enhances the training process.</p>
           <br>
           <p><strong>Data Augmentation:</strong> This data augmentation applies minimal changes to the images, maintaining their core features 
-            while improving model robustness. It includes slight rotations (1°), small shifts (0.5%), minor shears and zooms (1%), and horizontal flips.
+            while improving model robustness. It includes slight rotations (0.5°), small shifts (0.5%), minor shears and zooms (1%), and horizontal flips.
              These subtle adjustments help prevent overfitting by introducing slight variations, while the nearest fill mode preserves visual consistency.</p>
         </ul>
       </div>
@@ -261,14 +261,18 @@
           </div>
           <div class="result-item">
             <img src="./assets/Project1/Model2_Class_Rep.png" alt="Model 2 Classification Report" />
-            <p>The classification report highlights shows a very good performance of Model 2, with an improved accuracy of 70%.
-              Most of the classes have good F1-scores. The only class that really needs improving is "meningioma_tumor", which has a recall of just 30%.
+            <p>The classification report highlights shows a very good performance of Model 2, with an improved accuracy of 71%.
+              Most of the classes have good F1-scores. The only class that really needs improving is "meningioma_tumor", which has a recall of 57%.
             </p>
             <br>
             <br>
           </div>
         </div>
-        <p><strong>Model 2 Results:</strong> 
+        <p><strong>Model 2 Results: </strong> Model 2 demonstrates significant improvements in performance compared to its predecessor. The accuracy trend during
+           training and validation shows consistent growth, indicating effective learning and reduced overfitting. The confusion matrix further confirms strong 
+           performance, with most predictions correctly classified. According to the classification report, the model achieves an overall accuracy of 71%, 
+           with good F1-scores across most classes. While the "meningioma_tumor" class shows room for improvement, particularly with a recall of 57%,
+            the model's overall robustness makes it a reliable tool for brain tumor classification. Further fine-tuning may enhance performance on specific challenging classes.
         </p>
       </div>
     </section>
@@ -278,7 +282,18 @@
     <section id="conclusion" class="section-container">
       <div class="container">
         <h2 class="section-title">Conclusion</h2>
-        <p></p>
+        <p>This project successfully developed and evaluated deep learning models to classify brain tumors from medical images. Through iterative improvements,
+           significant advancements were made between Model 1 and Model 2.
+
+          Model 1 served as a baseline but faced challenges such as overfitting and poor generalization, evidenced by a sharp decline in validation accuracy 
+          and a low overall accuracy of 21%. The confusion matrix and classification report indicated poor performance across all classes, highlighting the 
+          need for architectural enhancements and regularization techniques.
+          
+          Model 2 addressed these issues by incorporating advanced features like increased filter capacity, L2 regularization, and a learning rate scheduler. 
+          These enhancements led to substantial improvements, with Model 2 achieving an overall accuracy of 71%. The accuracy trend demonstrated consistent 
+          learning, and the confusion matrix showed most predictions correctly classified. The classification report confirmed good F1-scores for most classes, 
+          though the "meningioma_tumor" class remains an area for future improvement, with a recall of 57%.
+        </p>
       </div>
     </section>
 
