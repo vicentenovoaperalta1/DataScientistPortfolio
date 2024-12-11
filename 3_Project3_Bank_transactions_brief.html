@@ -126,7 +126,10 @@
           <img src="./assets/Project3/Dataframe1.png" alt="Dataframe 1 Image" style="width: 100%; max-width: 1000px;">
         </figure>
     
-        <p> Dataframe 1 is a table of transactions...</p>
+        <p> Dataframe 1 is a table of transactions. It contains information about each transaction, in 4.260.904 rows and 10 columns. 
+          Some of the important columns are the amount of the transaction, if it has been identified as a fraud, the card number, 
+          which will be used to merge with the customer table, and many other relevant columns.
+        </p>
       </div>
     </section>    
     
@@ -138,48 +141,33 @@
           <img src="./assets/Project3/Dataframe2.png" alt="Dataframe 2 Image" style="width: 100%; max-width: 1000px;">
         </figure>
     
-        <p> Dataframe 2 is a table of customers...</p>
+        <p> Dataframe 2 is a table of customers. It contains information about each customer. It has 1.000 rows and 15 columns.
+          Some of the important columns are gender, job, date of birth and cc_num which will be used to merge with the transaction table.
+        </p>
       </div>
-    </section>        
+    </section>           
 
     <section>
-      <h3 class="section-title-small" style="font-size: 1.5em;">Rates Per Variable</h3>
+      <h3 class="section-title-small" style="font-size: 2em;">Part 1: clustering to identify client spending patterns for targeted marketing</h3>
       <div class="eda-figure">
-        <!-- Third Image -->
-        <figure>
-          <img src="./assets/Project2/Rates_Per_Variable.png" alt="Rates Per Variable Image" style="width: 100%; max-width: 600px;">
-        </figure>
-        
-        <p><strong>Gender:</strong> Gender unknown has the highest conversion rate of 3.1%, followed by male with a 2.7% rate, doubling the female rate of 1.5%.</p>
-        <p>This highly indicates that gender is going to be a key variable for the campaign.</p>
-        <p><strong>Age:</strong> The Unknown group has the highest conversion rate, and it represents the 85% of the data.
-                                Out of the rest, the best conversion rates seem to be around [35, 64].</p>
-        <p><strong>Car segment:</strong> Car segments Small/Medium and Large/SUV have a 3.0% conversion rate, nearly twice
-                                        that of the other two categories.</p>
-      </div>
-    </section>    
-
-    <section>
-      <h3 class="section-title-small" style="font-size: 1.5em;">Correlation Heatmap</h3>
-      <div class="eda-figure">
-        <!-- Fourth Image -->
-        <figure>
-          <img src="./assets/Project2/Correlation_Heatmap.png" alt="Correlation Heatmap Image" style="width: 100%; max-width: 600px;">
-        </figure>
-        
-        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. Many of the independent 
-          variables have high correlations between them, so it's probably better not to include all of them in the ML model.
-           Also, it shows that all the variables are negatively correlated to the target variable.</p>
-        
-      </div>
-    </section>    
-
-    <section>
-      <h3 class="section-title-small" style="font-size: 2em;">Model: Catboost</h3>
-      <div class="eda-figure">
-        <!-- Fifth Image -->
-        <p>This model is very efficient at handling categorical variables. It works by building symmetric trees and doing ordered
-          boosting to help avoid overfitting. It performs well with noisy data and small datasets.
+        <!-- Part 1 introduction -->
+        <p> Part 1 has its own preprocessing, which includes:
+          <br>
+          <p><strong>Fraud:</strong> The relation between fraud and the different merchants was analyzed, to see if maybe 
+          frauds were more related to a set of particular merchants. None relation was found. Therefore, fraud transactions
+        were filtered out</p>
+        <br>
+       <p><strong>Unique customers:</strong> transaction data was examined and transformed to determine how many unique 
+       customers were there in the transaction table. There are 1.000 customers, but only 972 have transactions. </p>
+       <br>
+      <p><strong> Categorical data:</strong> there are many categorical columns in the transaction dataframe, but not all
+      of those will be used. "Category" has 14 transaction categories, like "entertainment", "shopping_pos" and "groocery_pos".
+      On the other hand, "merchant" column has 21.977 different categories and "job" has 507 categories, so those columns are not
+    going to be used </p>
+    <br>
+   <p><strong>DOB:</strong> DOB was transformed into age, so that its more meaningful and easy to use </p>
+   <br>
+  <p><strong>Gender:</strong> gender column was transformed into numerical categories with One Hot Encoding </p>
         </p>
         <br>
         <br>
