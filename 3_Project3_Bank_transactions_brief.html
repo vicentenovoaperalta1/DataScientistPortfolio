@@ -151,31 +151,44 @@
       <h3 class="section-title-small" style="font-size: 2em;">Part 1: clustering to identify client spending patterns for targeted marketing</h3>
       <div class="eda-figure">
         <!-- Part 1 introduction -->
-          <br>
-        <p> Part 1 has its own preprocessing, which includes:</p>
-          <br>
-          <p><strong>Fraud:</strong> The relation between fraud and the different merchants was analyzed, to see if maybe 
-          frauds were more related to a set of particular merchants. None relation was found. Therefore, fraud transactions
-        were filtered out</p>
         <br>
-       <p><strong>Unique customers:</strong> transaction data was examined and transformed to determine how many unique 
-       customers were there in the transaction table. There are 1.000 customers, but only 972 have transactions. </p>
-       <br>
-      <p><strong> Categorical data:</strong> there are many categorical columns in the transaction dataframe, but not all
-      of those will be used. "Category" has 14 transaction categories, like "entertainment", "shopping_pos" and "groocery_pos".
-      On the other hand, "merchant" column has 21.977 different categories and "job" has 507 categories, so those columns are not
-    going to be used </p>
-    <br>
-   <p><strong>DOB:</strong> DOB was transformed into age, so that its more meaningful and easy to use </p>
-   <br>
-  <p><strong>Gender:</strong> gender column was transformed into numerical categories with One Hot Encoding </p>
+        <p> Part 1 has its own preprocessing, which includes:</p>
+        <br>
+        <p><strong>Fraud:</strong> The relation between fraud and the different merchants was analyzed, to see if maybe 
+           frauds were more related to a set of particular merchants. None relation was found. Therefore, fraud transactions
+           were filtered out</p>
+        <br>
+        <p><strong>Unique customers:</strong> transaction data was examined and transformed to determine how many unique 
+           customers were there in the transaction table. There are 1.000 customers, but only 972 have transactions. </p>
+        <br>
+        <p><strong> Categorical data:</strong> there are many categorical columns in the transaction dataframe, but not all
+           of those will be used. "Category" has 14 transaction categories, like "entertainment", "shopping_pos" and "groocery_pos".
+           On the other hand, "merchant" column has 21.977 different categories and "job" has 507 categories, so those columns are not
+           going to be used </p>
+        <br>
+        <p><strong>DOB:</strong> DOB was transformed into age, so that its more meaningful and easy to use </p>
+        <br>
+        <p><strong>Gender:</strong> gender column was transformed into numerical categories with One Hot Encoding </p>
+        </p>
+        <br>
+        <p><strong>Model 1 transaction aggregation:</strong> the transaction data was aggregated using maximum function. Then it as merged
+            into the customer data.</p>
+        <br>
+        <p><strong>Model 2 transaction aggregation:</strong> the transaction data was aggregated using average function. Then it as merged
+            into the customer data.</p>
+        <br>
+        <p><strong>Normalization:</strong> the data was normalized so that it can be used more efficiently on the K-means model and so that
+           its easier to visualize in a radar plot </p>
         </p>
         <br>
         <br>
         
-        <h3 class="section-title-small" style="font-size: 1.5em;">ROC Curve</h3>
+        <h3 class="section-title-small" style="font-size: 1.5em;">Model 1: K-means</h3>
         <figure>
-          <img src="./assets/Project2/Roc_Curve.png" alt="ROC Curve Image" style="width: 100%; max-width: 450px;">
+          <img src="./assets/Project2/Model1_separated.png" alt="Kmeans1 separated Image" style="width: 100%; max-width: 450px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project2/Model1_together.png" alt="Kmeans1 together Image" style="width: 100%; max-width: 450px;">
         </figure>
         
         <p>This model shows a very good ROC Curve and its goodness is confirmed by a ROCAUC = 99.4%. </p>
