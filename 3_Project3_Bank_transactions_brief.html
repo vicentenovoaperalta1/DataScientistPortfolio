@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketing Campaign - Car Company | Project Brief</title>
+
+    <!-- Link the same stylesheet -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
+    <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
+
+    <!-- Include FontAwesome if icons are used -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Include any additional scripts as needed -->
+    <script defer src="./javascript/scrollreveal.min.js"></script>
+    <script defer src="./javascript/scrollveal.js"></script>
+
+    <style>
+      /* Style for positioning the image next to the title */
+      .hero-title-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-title {
+        margin-right: 20px;
+      }
+
+      .hero-title img {
+        max-width: 150px;
+        height: auto;
+      }
+
+      /* Style for section titles */
+      .section-title-small {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      /* Style for image results */
+      .image-results img {
+        width: 100%;
+        max-width: 500px;
+        margin: 10px 0;
+      }
+
+      .section-container {
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div id="hero">
+      <section class="container">
+        <div class="hero-title-wrapper">
+          <h1 class="hero-title">
+            Marketing Campaign - Car Company <br />
+            <span class="text-color-main">Project Overview</span>
+          </h1>
+          <img src="./assets/Project2/Marketing_campaign.png" alt="Marketing campaign Image" width="400" height="400" style="margin-left: 100px;"/>
+        </div>
+        <p class="hero-cta">
+          <a class="cta-btn cta-btn--hero" href="index.html">Back to Portfolio</a>
+        </p>
+      </section>
+    </div>
+
+    <!-- Project Description Section -->
+    <section id="project-details" class="section-container">
+      <div class="container">
+        <h2 class="section-title">About the Project</h2>
+        <p class="about-wrapper__info-text">
+          The project aims to support a marketing campaign for a car company by predicting which existing customers
+          are most likely to purchase a new car. The dataset used is owned by the company and its based on previous marketing campaigns.
+          The machine learning model's results will be used to decide which customers to contact in the next marketing campaign.
+        </p>
+      </div>
+    </section>
+
+    <!-- Libraries Used Section -->
+    <section id="libraries-used" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Libraries Used</h3>
+        <ul>
+          <p>Pandas</p>
+          <p>Numpy</p>
+          <p>Matplotlib</p>
+          <p>Math</p>
+          <p>Seaborn</p>
+          <p>Google.colab</p>
+          <p>Sklearn</p>
+          <p>Imblearn</p>
+          <p>Catboost</p>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Data Source Section -->
+    <section id="data-source" class="section-container">
+      <div class="container">
+        <h3 class="section-title-small" style="font-size: 2em;">Data Source</h3>
+        <p>Unknown: privately owned</p>
+        <p>Link: 'https://drive.usercontent.google.com/u/0/uc?id=1I9YA9aI-Cnc_IsGjyKfD_PldX5nVMmR6&export=download'</p>
+      </div>
+    </section>
+
+    <!-- Exploratory Data Analysis Section -->
+<section id="exploratory-data-analysis" class="section-container">
+  <div class="container">
+    <h3 class="section-title-small" style="font-size: 2em;">Exploratory Data Analysis</h3>
+    <br> <!-- Line break added here -->
+    
+    <section>
+      <div class="eda-figure">
+        <!-- First Image -->
+    <h3 class="section-title-small" style="font-size: 1.5em;">Target Variable</h3>
+        <figure>
+          <img src="./assets/Project2/Rate_Total.png" alt="Total Rate Image" style="width: 80%; max-width: 400px;">
+        </figure>
+    
+        <p><strong>Target Variable Distribution:</strong> There were a total of 131,337 clients contacted during the last campaign. The campaign achieved a 2.7% conversion rate. It is highly imbalanced, something that I will address later.</p>
+      </div>
+    </section>    
+    
+    <section>
+      <h3 class="section-title-small" style="font-size: 1.5em;">Distributions</h3>
+      <div class="eda-figure">
+        <!-- Second Image -->
+        <figure>
+          <img src="./assets/Project2/Distributions.png" alt="Distributions Image" style="width: 100%; max-width: 600px;">
+        </figure>
+    
+        <p><strong>Gender:</strong> We don't know the gender of 50% of the database. 27% are male and 20% female.</p>
+        <p><strong>Age:</strong> We don't know the age of 85% of the database. Out of the rest, 80% are below the age of 54.</p>
+        <p><strong>Car model:</strong> Models 2, 5, 3, 1, and 4 are the most prevalent, collectively comprising 80% of the sample.</p>
+        <p><strong>Car segment:</strong> Car segments Small/Medium and Large/SUV are 40% of the data each, and LCV is 20%.</p>
+      </div>
+    </section>        
+
+    <section>
+      <h3 class="section-title-small" style="font-size: 1.5em;">Rates Per Variable</h3>
+      <div class="eda-figure">
+        <!-- Third Image -->
+        <figure>
+          <img src="./assets/Project2/Rates_Per_Variable.png" alt="Rates Per Variable Image" style="width: 100%; max-width: 600px;">
+        </figure>
+        
+        <p><strong>Gender:</strong> Gender unknown has the highest conversion rate of 3.1%, followed by male with a 2.7% rate, doubling the female rate of 1.5%.</p>
+        <p>This highly indicates that gender is going to be a key variable for the campaign.</p>
+        <p><strong>Age:</strong> The Unknown group has the highest conversion rate, and it represents the 85% of the data.
+                                Out of the rest, the best conversion rates seem to be around [35, 64].</p>
+        <p><strong>Car segment:</strong> Car segments Small/Medium and Large/SUV have a 3.0% conversion rate, nearly twice
+                                        that of the other two categories.</p>
+      </div>
+    </section>    
+
+    <section>
+      <h3 class="section-title-small" style="font-size: 1.5em;">Correlation Heatmap</h3>
+      <div class="eda-figure">
+        <!-- Fourth Image -->
+        <figure>
+          <img src="./assets/Project2/Correlation_Heatmap.png" alt="Correlation Heatmap Image" style="width: 100%; max-width: 600px;">
+        </figure>
+        
+        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. Many of the independent 
+          variables have high correlations between them, so it's probably better not to include all of them in the ML model.
+           Also, it shows that all the variables are negatively correlated to the target variable.</p>
+        
+      </div>
+    </section>    
+
+    <section>
+      <h3 class="section-title-small" style="font-size: 2em;">Model: Catboost</h3>
+      <div class="eda-figure">
+        <!-- Fifth Image -->
+        <p>This model is very efficient at handling categorical variables. It works by building symmetric trees and doing ordered
+          boosting to help avoid overfitting. It performs well with noisy data and small datasets.
+        </p>
+        <br>
+        <br>
+        
+        <h3 class="section-title-small" style="font-size: 1.5em;">ROC Curve</h3>
+        <figure>
+          <img src="./assets/Project2/Roc_Curve.png" alt="ROC Curve Image" style="width: 100%; max-width: 450px;">
+        </figure>
+        
+        <p>This model shows a very good ROC Curve and its goodness is confirmed by a ROCAUC = 99.4%. </p>
+        <br>
+        <br>
+        
+        <h3 class="section-title-small" style="font-size: 1.5em;">Confusion Matrix</h3>
+        <figure>
+          <img src="./assets/Project2/Confusion_Matrix.png" alt="Confusion Matrix Image" style="width: 100%; max-width: 200px;">
+        </figure>
+
+        
+        <p>This heatmap shows the correlations between all the numerical variables in  the dataset. Many of the independent 
+          variables have high correlations between them, so it's probably better not to include all of them in the ML model.
+           Also, it shows that all the variables are negatively correlated to the target variable.</p>
+           <br>
+           <br>
+           
+        <h3 class="section-title-small" style="font-size: 1.5em;">Classification Report</h3>
+        <figure>
+          <img src="./assets/Project2/Classification_Report.png" alt="Classification Report Image" style="width: 100%; max-width: 300px;">
+        </figure>
+        
+        <p>The model achieves a 99% accuracy, with very good f1-scores of 99% and 81%, and succesfully predicts 89% of 
+          customers  who will be interested in buying a new car.</p>
+        
+      </div>
+    </section>    
+
+  </div>
+</section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion" class="section-container">
+      <div class="container">
+        <h2 class="section-title">Conclusion</h2>
+        <p> This project provides valuable insights for executing the marketing campaign. It reduces the number of clients to be contacted from approximately 131,000 to around 800, while still achieving 89% of the sales. These results assume the model's recommendations are applied directly. Alternatively, the model also outputs probabilities for each customer, allowing flexibility in customizing the number of clients to contact.  </p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#hero" class="back-to-top" aria-label="go back to top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <p class="footer__text">
+          &copy; <span id="year"></span> - Vicente Novoa
+        </p>
+      </div>
+    </footer>
+
+    <!-- JS Script for Dynamic Year -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
