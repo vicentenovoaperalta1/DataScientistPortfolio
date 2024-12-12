@@ -183,7 +183,7 @@
         <br>
         <br>
         
-        <h3 class="section-title-small" style="font-size: 1.5em;">Model 1: K-means</h3>
+        <h3 class="section-title-small" style="font-size: 1.5em;">Model 1: K-means with maximum aggregation function</h3>
         <figure>
           <img src="./assets/Project3/Model1_separated.png" alt="Kmeans1 separated Image" style="width: 100%; max-width: 1000px;">
         </figure>
@@ -191,9 +191,58 @@
           <img src="./assets/Project3/Model1_together.png" alt="Kmeans1 together Image" style="width: 100%; max-width: 450px;">
         </figure>
         
-        <p>This model shows a very good ROC Curve and its goodness is confirmed by a ROCAUC = 99.4%. </p>
+        <p>The first image shows each cluster separately and the second one shows all of the clusters together. In some cases it may seem 
+          like they are not the same, but its just due to the different scales.This clustering model doesn´t give very meaningful or clear results.
+          The difference between clusters are not significant or meaningful. Nonetheless, the characterization would be something like:
+        <br>
+          Cluster 0: 30% of the sample. 75% males, mostly aged from [20,50], with a mean of 36. They seem to be a group of clients who 
+          spend their money in a very varied and balanced way. They have similar maximum spendings on categories like: entertainment, 
+          food_dining, shopping, personal_care, home, health_fitness, etc.
+        <br>  
+          Cluster 1: 69% of the sample. 60% females, mostly aged from [20, 95], with a mean of 58. They are a group of customers who's
+           maximum expenses are on categories like gas_transport and groceries. The lesser expenses categories are on entertainment and 
+           food_dining.
+        <br>  
+          Cluster 2: They are just a 1% of the sample. 55% males, mostly aged from [20, 90], with a mean of 52. This type of customer 
+          has a clear maximum expense on the category travel. Their expense on this category is far greater than the other ones. Also, 
+          spends a high amount on food_dining and groceries. </p>
         <br>
         <br>
+
+        
+        <h3 class="section-title-small" style="font-size: 1.5em;">Model 2: K-means with average aggregation function</h3>
+        <figure>
+          <img src="./assets/Project3/Model2_separated.png" alt="Kmeans2 separated Image" style="width: 100%; max-width: 1000px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model2_together.png" alt="Kmeans2 together Image" style="width: 100%; max-width: 450px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model2_count.png" alt="Kmeans2 count Image" style="width: 100%; max-width: 1000px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model2_gender.png" alt="Kmeans2 gender Image" style="width: 100%; max-width: 1000px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model2_age.png" alt="Kmeans2 age Image" style="width: 100%; max-width: 1000px;">
+        </figure>
+        
+        <p>aaa
+        <br>
+          Cluster 0: 30% of the sample. 75% males, mostly aged from [20,50], with a mean of 36. They seem to be a group of clients who 
+          spend their money in a very varied and balanced way. They have similar maximum spendings on categories like: entertainment, 
+          food_dining, shopping, personal_care, home, health_fitness, etc.
+        <br>  
+          Cluster 1: 69% of the sample. 60% females, mostly aged from [20, 95], with a mean of 58. They are a group of customers who's
+           maximum expenses are on categories like gas_transport and groceries. The lesser expenses categories are on entertainment and 
+           food_dining.
+        <br>  
+          Cluster 2: They are just a 1% of the sample. 55% males, mostly aged from [20, 90], with a mean of 52. This type of customer 
+          has a clear maximum expense on the category travel. Their expense on this category is far greater than the other ones. Also, 
+          spends a high amount on food_dining and groceries. </p>
+        <br>
+        <br>
+
         
         <h3 class="section-title-small" style="font-size: 1.5em;">Confusion Matrix</h3>
         <figure>
