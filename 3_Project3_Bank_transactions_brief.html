@@ -148,11 +148,9 @@
     </section>           
 
     <section>
-      <h3 class="section-title-small" style="font-size: 2em;">Part 1: clustering to identify client spending patterns for targeted marketing</h3>
+      <h3 class="section-title-small" style="font-size: 2em;">Preprocessing</h3>
       <div class="eda-figure">
         <!-- Part 1 introduction -->
-        <br>
-        <p> Part 1 has its own preprocessing, which includes:</p>
         <br>
         <p><strong>Fraud:</strong> The relation between fraud and the different merchants was analyzed, to see if maybe 
            frauds were more related to a set of particular merchants. None relation was found. Therefore, fraud transactions
@@ -195,15 +193,16 @@
           like they are not the same, but its just due to the different scales.This clustering model doesn´t give very meaningful or clear results.
           The difference between clusters are not significant or meaningful. Nonetheless, the characterization would be something like:
         <br>
-          Cluster 0: 30% of the sample. 75% males, mostly aged from [20,50], with a mean of 36. They seem to be a group of clients who 
+        <br>
+        <strong>Cluster 0:</strong> 30% of the sample. 75% males, mostly aged from [20,50], with a mean of 36. They seem to be a group of clients who 
           spend their money in a very varied and balanced way. They have similar maximum spendings on categories like: entertainment, 
           food_dining, shopping, personal_care, home, health_fitness, etc.
         <br>  
-          Cluster 1: 69% of the sample. 60% females, mostly aged from [20, 95], with a mean of 58. They are a group of customers who's
+        <strong>Cluster 1:</strong> 69% of the sample. 60% females, mostly aged from [20, 95], with a mean of 58. They are a group of customers who's
            maximum expenses are on categories like gas_transport and groceries. The lesser expenses categories are on entertainment and 
            food_dining.
         <br>  
-          Cluster 2: They are just a 1% of the sample. 55% males, mostly aged from [20, 90], with a mean of 52. This type of customer 
+        <strong>Cluster 2:</strong>strong> They are just a 1% of the sample. 55% males, mostly aged from [20, 90], with a mean of 52. This type of customer 
           has a clear maximum expense on the category travel. Their expense on this category is far greater than the other ones. Also, 
           spends a high amount on food_dining and groceries. </p>
         <br>
@@ -217,6 +216,12 @@
         <figure>
           <img src="./assets/Project3/Model2_together.png" alt="Kmeans2 together Image" style="width: 100%; max-width: 450px;">
         </figure>
+
+        <p>Again, the first image shows each cluster separately and the second one shows all of the clusters together. Now, in this case, 
+          clustering results are much better. The difference between clusters is significantly clearer. It is easy to see that the spending
+          behavior is different for each cluster. </p>
+        <br>
+        <br>
         <figure>
           <img src="./assets/Project3/Model2_count.png" alt="Kmeans2 count Image" style="width: 100%; max-width: 450px;">
         </figure>
@@ -226,6 +231,15 @@
         <figure>
           <img src="./assets/Project3/Model2_age.png" alt="Kmeans2 age Image" style="width: 100%; max-width: 450px;">
         </figure>
+        <br>
+        <p> Additionally, with the help of the previous charts we can better define the three clusters:       
+        <br>  
+        <strong>Cluster 0:</strong> 30% of the sample. 85% males, mostly aged from [20,50], with a mean of 35. This group of clients are the ones who spend the less, in average, just $778. They tend to spend in a balanced manner, though they do spend a bit more on categories like travel and kids_pets and a bit less on shopping.
+        <br>  
+        <strong>Cluster 1:</strong> 20% of the sample. 97% females, mostly aged from [20, 55], with a mean of 39. This is the group of customers who spends the most, in average, $1263. They also seem to be quite balanced on their spending across categories. They spend a bit more on categories like: gas_transport, groceries, misc_pos, misc_net. They spend a bit less in categories like: entertainment, food_dining and travel.
+        <br>  
+        <strong>Cluster 2:</strong> 50% of the sample. 55% males, mostly aged from [50, 90], with a mean of 66. This type of customer spends $917 in average. They spend the most on entertainment, food_dining and shopping. They spend the less on gas_transport, groceries, misc_pos and misc_net. </p>
+        <br>
         
         <p>aaa
         <br>
