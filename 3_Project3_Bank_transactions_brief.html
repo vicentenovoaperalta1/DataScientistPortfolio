@@ -154,29 +154,29 @@
         <br>
         <p><strong>Fraud:</strong> The relation between fraud and the different merchants was analyzed, to see if maybe 
            frauds were more related to a set of particular merchants. None relation was found. Therefore, fraud transactions
-           were filtered out</p>
+           were filtered out.</p>
         <br>
         <p><strong>Unique customers:</strong> transaction data was examined and transformed to determine how many unique 
            customers were there in the transaction table. There are 1.000 customers, but only 972 have transactions. </p>
         <br>
         <p><strong> Categorical data:</strong> there are many categorical columns in the transaction dataframe, but not all
-           of those will be used. "Category" has 14 transaction categories, like "entertainment", "shopping_pos" and "groocery_pos".
-           On the other hand, "merchant" column has 21.977 different categories and "job" has 507 categories, so those columns are not
-           going to be used </p>
+           of those will be used. "Category" has only 14 transaction categories, like "entertainment", "shopping_pos" and "grocery_pos", so
+           it will probably be a useful column. On the other hand, "merchant" column has 21.977 different categories and "job" 
+           has 507 categories, so those columns are not going to be used.</p>
         <br>
-        <p><strong>DOB:</strong> DOB was transformed into age, so that its more meaningful and easy to use </p>
+        <p><strong>DOB:</strong> was transformed into age, so that its more meaningful and easy to use. </p>
         <br>
-        <p><strong>Gender:</strong> gender column was transformed into numerical categories with One Hot Encoding </p>
+        <p><strong>Gender:</strong> gender column was transformed into numerical categories with One Hot Encoding. </p>
         </p>
         <br>
-        <p><strong>Model 1 transaction aggregation:</strong> the transaction data was aggregated using maximum function. Then it as merged
-            into the customer data.</p>
+        <p><strong>Model 1 transaction aggregation:</strong> the transaction data was aggregated using maximum function. Afterwards, it has
+          been merged into the customer data.</p>
         <br>
-        <p><strong>Model 2 transaction aggregation:</strong> the transaction data was aggregated using average function. Then it as merged
-            into the customer data.</p>
+        <p><strong>Model 2 transaction aggregation:</strong> the transaction data was aggregated using average function. Afterwards, it has
+          been merged into the customer data.</p>
         <br>
         <p><strong>Normalization:</strong> the data was normalized so that it can be used more efficiently on the K-means model and so that
-           its easier to visualize in a radar plot </p>
+           its easier to visualize in a radar plot. </p>
         </p>
         <br>
         <br>
@@ -189,26 +189,14 @@
           <img src="./assets/Project3/Model1_together.png" alt="Kmeans1 together Image" style="width: 100%; max-width: 450px;">
         </figure>
         
-        <p>The first image shows each cluster separately and the second one shows all of the clusters together. In some cases it may seem 
-          like they are not the same, but its just due to the different scales.This clustering model doesn´t give very meaningful or clear results.
-          The difference between clusters are not significant or meaningful. Nonetheless, the characterization would be something like:
+        <p>
         <br>
-        <br>
-        <strong>Cluster 0:</strong> 30% of the sample. 75% males, mostly aged from [20,50], with a mean of 36. They seem to be a group of clients who 
-          spend their money in a very varied and balanced way. They have similar maximum spendings on categories like: entertainment, 
-          food_dining, shopping, personal_care, home, health_fitness, etc.
-        <br>  
-        <strong>Cluster 1:</strong> 69% of the sample. 60% females, mostly aged from [20, 95], with a mean of 58. They are a group of customers who's
-           maximum expenses are on categories like gas_transport and groceries. The lesser expenses categories are on entertainment and 
-           food_dining.
-        <br>  
-        <strong>Cluster 2:</strong>strong> They are just a 1% of the sample. 55% males, mostly aged from [20, 90], with a mean of 52. This type of customer 
-          has a clear maximum expense on the category travel. Their expense on this category is far greater than the other ones. Also, 
-          spends a high amount on food_dining and groceries. </p>
+          The first image shows each cluster separately and the second one shows all of the clusters together. In some cases it may seem 
+          like they are not represenging the same clusters, but its just due to the different scales. This clustering model doesn´t give
+          very meaningful or clear results. The difference between clusters is not significant or meaningful.
         <br>
         <br>
 
-        
         <h3 class="section-title-small" style="font-size: 1.5em;">Model 2: K-means with average aggregation function</h3>
         <figure>
           <img src="./assets/Project3/Model2_separated.png" alt="Kmeans2 separated Image" style="width: 100%; max-width: 1000px;">
@@ -221,6 +209,7 @@
           clustering results are much better. The difference between clusters is significantly clearer. It is easy to see that the spending
           behavior is different for each cluster. </p>
         <br>
+        <p> Additionally, with the help of the following charts we can better define the three clusters:       
         <br>
         <figure>
           <img src="./assets/Project3/Model2_count.png" alt="Kmeans2 count Image" style="width: 100%; max-width: 450px;">
@@ -231,31 +220,15 @@
         <figure>
           <img src="./assets/Project3/Model2_age.png" alt="Kmeans2 age Image" style="width: 100%; max-width: 450px;">
         </figure>
+        <p>
         <br>
-        <p> Additionally, with the help of the previous charts we can better define the three clusters:       
-        <br>  
         <strong>Cluster 0:</strong> 30% of the sample. 85% males, mostly aged from [20,50], with a mean of 35. This group of clients are the ones who spend the less, in average, just $778. They tend to spend in a balanced manner, though they do spend a bit more on categories like travel and kids_pets and a bit less on shopping.
         <br>  
         <strong>Cluster 1:</strong> 20% of the sample. 97% females, mostly aged from [20, 55], with a mean of 39. This is the group of customers who spends the most, in average, $1263. They also seem to be quite balanced on their spending across categories. They spend a bit more on categories like: gas_transport, groceries, misc_pos, misc_net. They spend a bit less in categories like: entertainment, food_dining and travel.
         <br>  
         <strong>Cluster 2:</strong> 50% of the sample. 55% males, mostly aged from [50, 90], with a mean of 66. This type of customer spends $917 in average. They spend the most on entertainment, food_dining and shopping. They spend the less on gas_transport, groceries, misc_pos and misc_net. </p>
         <br>
-        
-        <p>aaa
-        <br>
-          Cluster 0: 30% of the sample. 75% males, mostly aged from [20,50], with a mean of 36. They seem to be a group of clients who 
-          spend their money in a very varied and balanced way. They have similar maximum spendings on categories like: entertainment, 
-          food_dining, shopping, personal_care, home, health_fitness, etc.
-        <br>  
-          Cluster 1: 69% of the sample. 60% females, mostly aged from [20, 95], with a mean of 58. They are a group of customers who's
-           maximum expenses are on categories like gas_transport and groceries. The lesser expenses categories are on entertainment and 
-           food_dining.
-        <br>  
-          Cluster 2: They are just a 1% of the sample. 55% males, mostly aged from [20, 90], with a mean of 52. This type of customer 
-          has a clear maximum expense on the category travel. Their expense on this category is far greater than the other ones. Also, 
-          spends a high amount on food_dining and groceries. </p>
-        <br>
-        <br>
+        </p>
 
       </div>
     </section>    
