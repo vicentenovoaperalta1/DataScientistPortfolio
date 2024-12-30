@@ -174,15 +174,18 @@
         <br>
         <p><strong>Model 2 transaction aggregation:</strong> the transaction data was aggregated using average function. Afterwards, it has
           been merged into the customer data.</p>
-        <br>
-        <p><strong>Normalization:</strong> the data was normalized so that it can be used more efficiently on the K-means model and so that
-           its easier to visualize in a radar plot. </p>
-        </p>
+          <br>
+          <p><strong>Normalization:</strong> the data was normalized so that it can be used more efficiently on the K-means model and so that
+             its easier to visualize in a radar plot. </p>
+          <br>
+          <p><strong>Filtering:</strong> There were more than 4.000.000 transactions, which was too much data to handle for the 
+            Isolation Forest in Google Colab. Therefore, filtered some of the transactions. I did this looking into the distribution of the
+            transaction's amount and dropping the lower amounts, since they hold less risk. </p>
         <br>
         <br>
       </div>
       
-      <h3 class="section-title-small" style="font-size: 2em;">Results</h3>
+      <h3 class="section-title-small" style="font-size: 2em;">Results - Clustering to identify client spending patterns for targeted marketing</h3>
       <br>
         <h3 class="section-title-small" style="font-size: 1.5em;">Model 1: K-means with maximum aggregation function</h3>
         <br>
@@ -244,6 +247,71 @@
         </p>
 
       </div>
+
+      
+      <h3 class="section-title-small" style="font-size: 2em;">Results - Isolation Forest to detect unusual transactions, aiding in fraud detection and risk management</h3>
+      <br>
+        <h3 class="section-title-small" style="font-size: 1.5em;">Model 1: K-means with maximum aggregation function</h3>
+        <br>
+        <figure>
+          <img src="./assets/Project3/Model1_separated.png" alt="Kmeans1 separated Image" style="width: 100%; max-width: 1000px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model1_together.png" alt="Kmeans1 together Image" style="width: 100%; max-width: 450px;">
+        </figure>
+        
+        <p>
+        <br>
+          The first image shows each cluster separately and the second one shows all of the clusters together. In some cases it may seem 
+          like they are not represenging the same clusters, but its just due to the different scales. This clustering model doesn´t give
+          very meaningful or clear results. The difference between clusters is not significant or meaningful.
+        <br>
+        <br>
+
+        <h3 class="section-title-small" style="font-size: 1.5em;">Model 2: K-means with average aggregation function</h3>
+        <br>
+        <figure>
+          <img src="./assets/Project3/Model2_separated.png" alt="Kmeans2 separated Image" style="width: 100%; max-width: 1000px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model2_together.png" alt="Kmeans2 together Image" style="width: 100%; max-width: 450px;">
+        </figure>
+
+        <p>Again, the first image shows each cluster separately and the second one shows all of the clusters together. Now, in this case, 
+          clustering results are much better. The difference between clusters is significantly clearer. It is easy to see that the spending
+          behavior is different for each cluster. </p>
+        <br>
+        <p> Additionally, with the help of the following charts we can better define the three clusters:       
+        <br>
+        <br>
+        <figure>
+          <img src="./assets/Project3/Model2_count.png" alt="Kmeans2 count Image" style="width: 100%; max-width: 450px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model2_gender.png" alt="Kmeans2 gender Image" style="width: 100%; max-width: 450px;">
+        </figure>
+        <figure>
+          <img src="./assets/Project3/Model2_age.png" alt="Kmeans2 age Image" style="width: 100%; max-width: 450px;">
+        </figure>
+        <p>
+        <br>
+        <strong>Cluster 0:</strong> 30% of the sample. 85% males, mostly aged from [20,50], with a mean of 35. These clients are the 
+        ones who spend the less, in average, just $778. They tend to spend in a balanced manner, though they do spend a bit more on 
+        categories like travel and kids_pets and a bit less on shopping.
+        <br>  
+        <strong>Cluster 1:</strong> 20% of the sample. 97% females, mostly aged from [20, 55], with a mean of 39. This is the group of 
+        customers who spends the most, in average, $1263. They also seem to be quite balanced on their spending across categories. 
+        However, they spend a bit more on categories like: gas_transport, groceries, misc_pos, misc_net. Additionally, they spend a bit
+         less in categories like: entertainment, food_dining and travel.
+        <br>  
+        <strong>Cluster 2:</strong> 50% of the sample. 55% males, mostly aged from [50, 90], with a mean of 66. This type of customer 
+        spends $917 in average. They spend the most on entertainment, food_dining and shopping. They spend the less on gas_transport,
+         groceries, misc_pos and misc_net. </p>
+        <br>
+        </p>
+
+      </div>
+
     </section>    
 
   </div>
